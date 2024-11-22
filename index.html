@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aban is ...?</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+        }
+
+        h1, i {
+            color: white;
+            font-size: 4vw;
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+
+    <script>
+        fetch('https://intimate-crappie-frank.ngrok-free.app/', {
+            method: 'GET'
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementsByTagName('i')[0].innerText = data.text
+        })
+        .catch(err => {
+            document.getElementsByTagName('i')[0].innerText = "sleeping or his laptop is off"
+        })
+    </script>
+</head>
+<body>
+    <h1>Aban is <i>...</i></h1>
+</body>
+</html>
