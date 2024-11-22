@@ -27,7 +27,6 @@
             span, i { 
                 font-size: 4vw;
                 max-width: 70vw;
-                outline: red solid 2px;
             }
         }
         
@@ -36,7 +35,6 @@
             span, i { 
                 font-size: 5vw;
                 max-width: 70vw;
-                outline: red solid 2px;
             }
         }
 
@@ -58,7 +56,7 @@
             document.getElementsByTagName('i')[0].innerText = data.text
         })
         .catch(err => {
-            document.getElementsByTagName('i')[0].innerText = "sleeping or his laptop is off"
+            document.getElementsByTagName('i')[0].innerText = "sleeping or his laptop is off (server is down)"
         })
     </script>
 </head>
