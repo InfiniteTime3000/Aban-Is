@@ -16,15 +16,32 @@
 
         span, i {
             color: white;
-            font-size: 4vw;
             text-align: center;
             font-weight: bold;
-            max-width: 70vw;
             overflow-wrap: break-word;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
 
-        @media only screen and (max-width: 1024px) {
+        /* Desktops and laptops */
+        @media only screen and (min-width: 992px) {
+            span, i { 
+                font-size: 4vw;
+                max-width: 70vw;
+                outline: red solid 2px;
+            }
+        }
+        
+        /* Tablets */
+        @media only screen and (min-width: 768px) {
+            span, i { 
+                font-size: 5vw;
+                max-width: 70vw;
+                outline: red solid 2px;
+            }
+        }
+
+        /* Smartphones (portrait) */
+        @media only screen and (max-width : 768px) {
             span, i { 
                 font-size: 6vw;
                 max-width: 80vw;
