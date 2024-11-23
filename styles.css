@@ -1,0 +1,143 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+div#overlay {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    outline: none;
+    border: none;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    background-color: transparent;
+    border-bottom: 3px solid #fff;
+}
+
+input::placeholder {
+    opacity: 0%;
+}
+
+input:focus::placeholder {
+    opacity: 50%;
+
+}
+
+
+span, i {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    overflow-wrap: break-word;
+}
+
+button {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+
+}
+
+button::before {
+    content: "";
+    background: linear-gradient(45deg,
+            #ff0000,
+            #ff7300,
+            #fffb00,
+            #48ff00,
+            #00ffd5,
+            #002bff,
+            #7a00ff,
+            #ff00c8,
+            #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 35s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+button:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+/* Desktops and laptops */
+@media only screen and (min-width: 992px) {
+
+    span, i, input{
+        font-size: 4vw;
+        max-width: 70vw;
+    }
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) {
+
+    span, i, input{
+        font-size: 5vw;
+        max-width: 70vw;
+    }
+}
+
+/* Smartphones (portrait) */
+@media only screen and (max-width : 768px) {
+
+    span, i, input {
+        font-size: 6vw;
+        max-width: 80vw;
+    }
+}
