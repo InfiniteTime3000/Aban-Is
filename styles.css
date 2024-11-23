@@ -3,6 +3,10 @@ html, body {
     height: 100%;
     background-color: black;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -13,6 +17,7 @@ div#overlay {
     position: absolute;
     z-index: 99;
     display: none;
+    overflow: hidden;
     align-items: center;
     justify-content: center;
 }
@@ -22,10 +27,32 @@ div#main {
     height: 100%;
     background-color: black;
     position: absolute;
+    overflow: hidden;
     display: none;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
+}
+
+div#notif {
+    z-index: 99;
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #222;
+    border: 2px solid hotpink;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -100px;
+    right: 1%;
+    transition: 300ms ease-in-out;
+}
+
+div#notif span {
+    font-size: 12px;
 }
 
 input {
@@ -43,7 +70,7 @@ input:focus::placeholder {
 
 }
 
-span, i {
+#main span, i {
     color: white;
     text-align: center;
     font-weight: bold;
@@ -51,19 +78,20 @@ span, i {
 }
 
 button {
-    padding: 0.6em 2em;
+    width: 165px;
+    height: 50px;
     border: none;
     outline: none;
     color: rgb(255, 255, 255);
-    background: #111;
     cursor: pointer;
     position: relative;
+    word-spacing: 7px;
     z-index: 0;
     border-radius: 10px;
     user-select: none;
     -webkit-user-select: none;
+    font-size: 15px;
     touch-action: manipulation;
-
 }
 
 button::before {
@@ -87,12 +115,12 @@ button::before {
     -webkit-filter: blur(5px);
     width: calc(100% + 4px);
     height: calc(100% + 4px);
-    animation: glowing-button-85 35s linear infinite;
+    animation: rgb-button 35s linear infinite;
     transition: opacity 0.3s ease-in-out;
     border-radius: 10px;
 }
 
-@keyframes glowing-button-85 {
+@keyframes rgb-button {
     0% {
         background-position: 0 0;
     }
@@ -120,27 +148,44 @@ button:after {
 
 /* Desktops and laptops */
 @media only screen and (min-width: 992px) {
-
     span, i, input{
         font-size: 4vw;
         max-width: 70vw;
     }
+
+
 }
 
 /* Tablets */
 @media only screen and (min-width: 768px) {
-
     span, i, input{
         font-size: 5vw;
         max-width: 70vw;
+    }
+
+    button {
+        width: 160px;
+        height: 50px;
+    }
+
+    div#main {
+        height: 75%;
     }
 }
 
 /* Smartphones (portrait) */
 @media only screen and (max-width : 768px) {
-
     span, i, input {
-        font-size: 6vw;
+        font-size: 8.5vw;
         max-width: 80vw;
+    }
+
+    button {
+        width: 140px;
+        height: 50px;
+    }
+
+    div#main {
+        height: 50%;
     }
 }
