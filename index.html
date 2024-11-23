@@ -53,7 +53,7 @@
         })
         .then(response => response.json())
         .then(data => {
-            document.getElementsByTagName('i')[0].innerText = data.text
+            document.getElementsByTagName('i')[0].innerText = data.msg
         })
         .catch(err => {
             document.getElementsByTagName('i')[0].innerText = "sleeping or his laptop is off (server is down)"
