@@ -30,13 +30,13 @@ document.getElementById("heartBtn").addEventListener("click", async () => {
     localStorage.setItem("btnClickedAt", new Date().getTime())
     document.getElementById("notif").style.cssText = "top: 2%;"
 
-    await new Promise(r => setTimeout(r, 3000));
+    await new Promise(r => setTimeout(r, 2500));
 
     fetch("https://intimate-crappie-frank.ngrok-free.app/", {
         method: "POST",
         body: JSON.stringify({
             msg: localStorage.getItem("whoami"),
-            type: "heart"
+            type: document.getElementById("heartBtn").innerText.slice(-1)
         }),
         headers: {
             "Content-type": "application/json; charset=UTF-8"
