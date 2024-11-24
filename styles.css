@@ -95,7 +95,6 @@ span i {
     #ff0000);
     background-repeat: no-repeat;
     background-size: 100% 2px;
-    background-position: 100% 82%;
 }
 
 button {
@@ -183,8 +182,12 @@ button:after {
 /* Desktops and laptops */
 @media only screen and (min-width: 992px) {
     span, i, input{
-        font-size: 4vw;
+        font-size: 5vw;
         max-width: 70vw;
+    }
+
+    span i {
+        background-position: 100% 82%;
     }
 }
 
@@ -193,6 +196,10 @@ button:after {
     span, i, input{
         font-size: 5vw;
         max-width: 70vw;
+    }
+
+    span i {
+        background-position: 100% 82%;
     }
 
     button {
@@ -210,6 +217,10 @@ button:after {
     span, i, input {
         font-size: 10vw;
         max-width: 80vw;
+    }
+
+    span i {
+        background-position: 100% 95%;
     }
 
     button {
