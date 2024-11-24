@@ -27,12 +27,10 @@ document.getElementById("userInput").addEventListener("keydown", (e) => {
 
 document.getElementById("heartBtn").addEventListener("click", async () => {
     document.getElementById("heartBtn").setAttribute("disabled", true)
+    localStorage.setItem("btnClickedAt", new Date().getTime())
     document.getElementById("notif").style.cssText = "top: 2%;"
-    await new Promise(r => setTimeout(r, 2000));
-    
-    setTimeout(() => {
-        document.getElementById("heartBtn").removeAttribute("disabled")
-    }, 30000)
+
+    await new Promise(r => setTimeout(r, 3000));
 
     fetch("https://intimate-crappie-frank.ngrok-free.app/", {
         method: "POST",

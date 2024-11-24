@@ -37,14 +37,15 @@ div#main {
 div#notif {
     z-index: 99;
     width: 200px;
-    height: 50px;
+    height: 60px;
     border-radius: 15px;
     background-color: #222;
     border: 2px solid hotpink;
     color: #fff;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    flex-direction: column;
     position: absolute;
     top: -100px;
     right: 1%;
@@ -53,6 +54,10 @@ div#notif {
 
 div#notif span {
     font-size: 12px;
+}
+
+div#notif small {
+    font-size: 9.5px;
 }
 
 input {
@@ -77,6 +82,11 @@ input:focus::placeholder {
     overflow-wrap: break-word;
 }
 
+span i {
+    text-underline-offset: 10%;
+    text-decoration: underline dashed crimson 2px;
+}
+
 button {
     width: 165px;
     height: 50px;
@@ -89,6 +99,7 @@ button {
     z-index: 0;
     border-radius: 10px;
     user-select: none;
+    transition: 400ms;
     -webkit-user-select: none;
     font-size: 15px;
     touch-action: manipulation;
@@ -99,7 +110,7 @@ button:disabled {
 }
 
 button:disabled {
-    opacity: 75%;
+    opacity: 65%;
 }
 
 button:disabled::before {
@@ -119,15 +130,15 @@ button::before {
             #ff00c8,
             #ff0000);
     position: absolute;
-    top: -2px;
-    left: -2px;
+    top: -3.75px;
+    left: -3.75px;
     background-size: 400%;
     z-index: -1;
     filter: blur(5px);
     -webkit-filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: rgb-button 35s linear infinite;
+    width: calc(100% + 7.5px);
+    height: calc(100% + 7.5px);
+    animation: rgb-button 25s linear infinite;
     transition: opacity 0.3s ease-in-out;
     border-radius: 10px;
 }
@@ -186,7 +197,7 @@ button:after {
 /* Smartphones (portrait) */
 @media only screen and (max-width : 768px) {
     span, i, input {
-        font-size: 8.5vw;
+        font-size: 10vw;
         max-width: 80vw;
     }
 

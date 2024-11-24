@@ -6,6 +6,7 @@
     <title>Aban is ..?</title>
     <link rel="stylesheet" href="styles.css">
     <script src="networking.js"></script>
+    <script src="background.js"></script>
     <script src="controller.js" defer></script>
 </head>
 <body>
@@ -14,11 +15,12 @@
     </div>
     <div id="main">
         <span>Aban is <i></i></span>
-        <button id="heartBtn">Send 👋</button>
+        <button id="heartBtn" disabled>Send 👋</button>
     </div>
 
     <div id="notif">
         <span>👋 has been sent to Aban!</span>
+        <small>(Button disabled for 5 mins)</small>
     </div>
 </body>
 </html>
