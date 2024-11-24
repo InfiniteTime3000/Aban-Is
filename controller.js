@@ -1,7 +1,13 @@
 window.onload = () => {
-    if (!localStorage.getItem("whoami")) {
+    var user = localStorage.getItem("whoami");
+    if (!user) {
         document.getElementById("overlay").style.display = "flex";
     } else {
+        if (user.toLowerCase().startsWith("dakshita")) {
+            document.getElementById("heartBtn").innerText = "Send ❤️"
+            document.querySelector("#notif > span").innerText = "❤️ has been sent to Aban!"
+        }
+
         document.getElementById("main").style.display = "flex";
     }
 }
