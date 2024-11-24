@@ -36,7 +36,7 @@ document.getElementById("heartBtn").addEventListener("click", async () => {
         method: "POST",
         body: JSON.stringify({
             msg: localStorage.getItem("whoami"),
-            type: document.getElementById("heartBtn").innerText.slice(-1)
+            type: document.getElementById("heartBtn").innerText.slice(-2).codePointAt(0).toString()
         }),
         headers: {
             "Content-type": "application/json; charset=UTF-8"
