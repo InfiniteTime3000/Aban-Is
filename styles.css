@@ -94,6 +94,18 @@ button {
     touch-action: manipulation;
 }
 
+button:disabled {
+    cursor: not-allowed;
+}
+
+button:disabled {
+    opacity: 75%;
+}
+
+button:disabled::before {
+    animation-play-state: paused;
+}
+
 button::before {
     content: "";
     background: linear-gradient(45deg,
