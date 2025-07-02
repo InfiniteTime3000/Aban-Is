@@ -4,8 +4,8 @@ window.onload = () => {
         document.getElementById("overlay").style.display = "flex";
     } else {
         if (user.toLowerCase().startsWith("dakshita")) {
-            document.getElementById("heartBtn").innerText = "Send ❤️"
-            document.querySelector("#notif > span").innerText = "❤️ has been sent to Aban!"
+            document.getElementById("heartBtn").innerText = "Send 🧿"
+            document.querySelector("#notif > span").innerText = "🧿 has been sent to Aban!"
         }
 
         document.getElementById("main").style.display = "flex";
@@ -16,8 +16,8 @@ document.getElementById("userInput").addEventListener("keydown", (e) => {
     if (e.key == "Enter") {
         localStorage.setItem("whoami", document.getElementById("userInput").value)
         if (document.getElementById("userInput").value.toLowerCase().startsWith("dakshita")) {
-            document.getElementById("heartBtn").innerText = "Send ❤️"
-            document.querySelector("#notif > span").innerText = "❤️ has been sent to Aban!"
+            document.getElementById("heartBtn").innerText = "Send 🧿"
+            document.querySelector("#notif > span").innerText = "🧿 has been sent to Aban!"
         }
         
         document.getElementById("main").style.display = "flex";
