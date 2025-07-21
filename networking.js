@@ -3,7 +3,7 @@ fetch('https://intimate-crappie-frank.ngrok-free.app/', {
 }).then(response => response.json()).then(data => {
     document.getElementsByTagName('i')[0].innerText = data.msg
 }).catch(() => {
-    fetchWithTimeout('https://aban-is-server.onrender.com/', {
+    fetch('https://aban-is-server.onrender.com/', {
         method: 'GET'
     }).then(response => response.json()).then(data => {
         document.getElementsByTagName('i')[0].innerText = data.msg
